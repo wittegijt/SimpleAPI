@@ -7,8 +7,8 @@ trigger:
 - master
 
 pool:
-  # vmImage: 'windows-latest'
-  vmImage: 'ubuntu-18.04'
+  vmImage: 'windows-latest'
+  # vmImage: 'ubuntu-18.04'
 
 variables:
   solution: '**/*.sln'
@@ -46,5 +46,5 @@ steps:
   inputs:
     command: test
     projects: '**/*Test/*.csproj'
-    arguments: '--configuration $(buildConfiguration)'
+    arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
   
